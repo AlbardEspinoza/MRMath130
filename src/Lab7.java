@@ -114,6 +114,16 @@ public class Lab7 {
         return flag;
     }
 
+    public static int getMedian(int[] arr) {
+        int median;
+        if (arr.length % 2 != 0) {
+            median = arr[arr.length / 2 + 1];
+        } else {
+            median = (arr[arr.length / 2] + arr[arr.length / 2 + 1]);
+        }
+        return median;
+    }
+
 }
 
 

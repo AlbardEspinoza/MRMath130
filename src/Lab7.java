@@ -1,25 +1,22 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Lab7 {
 
     public static void main(String[] args) {
 
-        System.out.printf("%d %C %s", 10, 'A', "Yeah");
-        int[] ll = {12, 78, 4, 98, 67, 87, 56, 34, 65, 45, 76, 78, 123, 4};
-        int[] xx = {5, 5, 3, 1};
-        printArray(ll);
-        System.out.println(getAverage(xx));
-        double k = 2;
-        double d = 3;
-        double f = k / d;
-        System.out.println(f);
-        boolean b = contains(xx, 4);
-        int[] m = new int[0];//It is valid to create in java an array of length 0.
-        System.out.println(Arrays.toString(m));
-        System.out.println(b);
-        System.out.println("\n" + Arrays.toString(post4(ll)));
-        System.out.println(checkDuplicates(xx));
+        Scanner in = new Scanner(System.in);
 
+        System.out.println("How many integers are you typing? ");
+        int[] arr = new int[in.nextInt()];
+        for (int x = 0; x < arr.length; x++) {
+            System.out.println("Please enter an integer: ");
+            arr[x] = in.nextInt();
+        }
+        printArray(arr);
+        System.out.println("Total of typed integers:" + getTotal(arr));
+        System.out.println("Average of typed integers:");
+        System.out.printf("%.2f", getAverage(arr));
     }
 
 

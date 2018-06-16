@@ -17,6 +17,19 @@ public class Lab7 {
         System.out.println("Total of typed integers:" + getTotal(arr));
         System.out.println("Average of typed integers:");
         System.out.printf("%.2f", getAverage(arr));
+        System.out.println("Highest: " + getHighest(arr));
+        System.out.println("Lowest: " + getLowest(arr));
+        System.out.println("What value would you like to check if its in the array?");
+        System.out.println(contains(arr, in.nextInt()));
+        System.out.println("What other value would you like to check if its in the array?");
+        System.out.println(contains(arr, in.nextInt()));
+        int[] newArray = post4(arr);
+        printArray(newArray);
+        System.out.println(checkDuplicates(arr));
+        Arrays.sort(arr);
+        printArray(arr);
+        System.out.printf("Median: %.2f", getMedian(arr));
+
     }
 
 
@@ -101,7 +114,6 @@ public class Lab7 {
             for (int y = 0; y < a.length && count < 2; y++) {
                 if (a[x] == a[y]) {
                     count++;
-                    System.out.println(a[x] + " " + a[y] + " " + count);
                 }
             }
         }
@@ -111,12 +123,12 @@ public class Lab7 {
         return flag;
     }
 
-    public static int getMedian(int[] arr) {
-        int median;
+    public static double getMedian(int[] arr) {
+        double median;
         if (arr.length % 2 != 0) {
-            median = arr[arr.length / 2 + 1];
+            median = arr[arr.length / 2];
         } else {
-            median = (arr[arr.length / 2] + arr[arr.length / 2 + 1]);
+            median = (arr[arr.length / 2] + arr[arr.length / 2 - 1]) / 2.0;
         }
         return median;
     }

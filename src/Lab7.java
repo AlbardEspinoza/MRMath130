@@ -13,22 +13,39 @@ public class Lab7 {
             System.out.println("Please enter an integer: ");
             arr[x] = in.nextInt();
         }
+        System.out.println("Here is a printout of the original array:");
         printArray(arr);
-        System.out.println("The sum of all elements in the array:\n" + getTotal(arr));
+        System.out.println("The sum of all the elements in the array:\n" + getTotal(arr));
         System.out.println("The average of all elements in the array: ");
         System.out.printf("%.2f", getAverage(arr));
         System.out.println("\nHighest:\n" + getHighest(arr));
-        System.out.println("Lowest\n: " + getLowest(arr));
+        System.out.println("Lowest:\n" + getLowest(arr));
         System.out.println("What value would you like to check if it's in the array?");
-        System.out.println(contains(arr, in.nextInt()));
+        if (contains(arr, in.nextInt())) {
+            System.out.println("The value you entered is in the array.");
+        } else {
+            System.out.println("The value you entered isn't in the array.");
+        }
         System.out.println("What other value would you like to check if it's in the array?");
-        System.out.println(contains(arr, in.nextInt()));
+
+        if (contains(arr, in.nextInt())) {
+            System.out.println("The value you entered is in the array.");
+        } else {
+            System.out.println("The value you entered isn't in the array.");
+        }
         int[] newArray = post4(arr);
+        System.out.println("Here is a printout of the new post4 array after invoking\nthe post4 method");
         printArray(newArray);
-        System.out.println(checkDuplicates(arr));
+        if (checkDuplicates(arr)) {
+            System.out.println("The checkDuplicates method has found duplicates in this array.");
+        } else {
+            System.out.println("There are no duplicates in the array.");
+        }
+        //int[] tmp = arr;//TODO; Ask professor Rasky about this line i store a reference of an array, is the abs. length going to be the one in that array?
         Arrays.sort(arr);
+        System.out.println("Here is a printout of the original array after it is sorted: ");
         printArray(arr);
-        System.out.printf("Median: %.2f", getMedian(arr));
+        System.out.printf("The median of the original array is:\n%.2f", getMedian(arr));
 
     }
 
@@ -36,7 +53,7 @@ public class Lab7 {
     public static void printArray(int[] arr) {//TODO; Make it more elegant. Assume arr != null.
         int index = 0;
         for (int x = 0; index < arr.length; x++) {
-            if (index % 8 == 0) {
+            if (index % 8 == 0 && index != 0) {
                 System.out.println();
             }
             System.out.printf("%4d", arr[index]);//If else maybe for different arr index left?
@@ -134,8 +151,3 @@ public class Lab7 {
     }
 
 }
-
-
-
-
-

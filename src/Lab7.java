@@ -14,14 +14,14 @@ public class Lab7 {
             arr[x] = in.nextInt();
         }
         printArray(arr);
-        System.out.println("Total of typed integers:" + getTotal(arr));
-        System.out.println("Average of typed integers:");
+        System.out.println("The sum of all elements in the array:\n" + getTotal(arr));
+        System.out.println("The average of all elements in the array: ");
         System.out.printf("%.2f", getAverage(arr));
-        System.out.println("Highest: " + getHighest(arr));
-        System.out.println("Lowest: " + getLowest(arr));
-        System.out.println("What value would you like to check if its in the array?");
+        System.out.println("\nHighest:\n" + getHighest(arr));
+        System.out.println("Lowest\n: " + getLowest(arr));
+        System.out.println("What value would you like to check if it's in the array?");
         System.out.println(contains(arr, in.nextInt()));
-        System.out.println("What other value would you like to check if its in the array?");
+        System.out.println("What other value would you like to check if it's in the array?");
         System.out.println(contains(arr, in.nextInt()));
         int[] newArray = post4(arr);
         printArray(newArray);
@@ -36,11 +36,11 @@ public class Lab7 {
     public static void printArray(int[] arr) {//TODO; Make it more elegant. Assume arr != null.
         int index = 0;
         for (int x = 0; index < arr.length; x++) {
-            System.out.println();
-            for (int y = 0; y < 8 && index < arr.length; y++) {
-                System.out.printf("%4d", arr[index]);//If else maybe for different arr index left?
-                index++;
+            if (index % 8 == 0) {
+                System.out.println();
             }
+            System.out.printf("%4d", arr[index]);//If else maybe for different arr index left?
+            index++;
         }
         System.out.println();//Try to remove this line.
     }
